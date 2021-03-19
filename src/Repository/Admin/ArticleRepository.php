@@ -23,7 +23,7 @@ class ArticleRepository extends ServiceEntityRepository
      * @return Article[] Returns an array of Article objects
      */
 
-    public function findAllPublished()
+    public function findAllPublished(): array
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.isPublished = true')
@@ -47,7 +47,18 @@ class ArticleRepository extends ServiceEntityRepository
             ->getResult()
             ;
     }
+// je cree une requete pour ma recherche dans les articles publier
+    public function searchByTitle($search)
+    {
 
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.name like :search')
+            ->andWhere('a.isPublished =true')
+            ->setParameter('search','%'. $search.'%')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Article

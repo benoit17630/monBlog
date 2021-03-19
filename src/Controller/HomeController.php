@@ -11,31 +11,25 @@ class HomeController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @param ArticleRepository $repository
+     * @return Response
      */
     public function index(ArticleRepository $repository): Response
     {
         // jutilise une requete dql personaliser dans le repository
-        $articles= $repository->findAllPublishedLastTwo();
+        // $articles=$repository->findByisPublished(1,["id"=>"desc"],2);
+        // $articles= $repository->findAllPublishedLastTwo();
+        $articles = $repository->findBy(
+            ["isPublished"=> true],
+            ["id"=>"DESC"],
+            2
+        );
+
         return $this->render('home/index.html.twig', [
             "articles"=>$articles
 
         ]);
     }
-/*
-    /**
-     * @Route("/truc", name="truc")
-     */
-   /* public function bidule(ArticleRepository $repository)
-    {
-        $articles = $repository->findBy(
-            ["isPublished"=> true],
-            ["id"=>"DESC"],
-            2
-            );
 
-        return $this->render('home/index.html.twig', [
-            "articles"=>$articles
 
-        ]);
-    }*/
 }
