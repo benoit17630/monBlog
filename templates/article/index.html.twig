@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste" des articles{% endblock %}
+
+{% block body %}
+
+        <h1 class="text-center mb-5">Liste des articles</h1>
+        <div class="row">
+            {% for article  in articles %}
+
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body row">
+
+                                <h5 class="card-title col-12 text-center" style=" color:{{ article.category.color.color }}  ">{{ article.name }}</h5>
+
+                                <p class="card-text col-6">{{ article.content }}</p>
+                                <div class="col-6"> <img src="{{ article.image }}" alt="{{ article.name }}" class="img-fluid"></div>
+                                <a  href="{{ path('article_show', {id :article.id}) }}" class="btn btn-primary mt-5">voir</a>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+            {% endfor %}
+        </div>
+        {# display navigation #}
+        <div class="navigation">
+            {{ knp_pagination_render(articles) }}
+        </div>
+
+{% endblock %}
