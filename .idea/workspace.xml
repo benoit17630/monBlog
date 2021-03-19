@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/article/search.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +166,7 @@
       <workItem from="1615811477935" duration="9353000" />
       <workItem from="1615826201533" duration="29853000" />
       <workItem from="1615973031129" duration="4454000" />
-      <workItem from="1615983868992" duration="43942000" />
+      <workItem from="1615983868992" duration="45502000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -182,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616151318600</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="function de recherche">
+      <created>1616166219624</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1616166219624</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +190,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pour que david regarde" />
-    <option name="LAST_COMMIT_MESSAGE" value="pour que david regarde" />
+    <MESSAGE value="function de recherche" />
+    <option name="LAST_COMMIT_MESSAGE" value="function de recherche" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
