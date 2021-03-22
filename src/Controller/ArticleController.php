@@ -34,7 +34,6 @@ class ArticleController extends AbstractController
         $search = $request->query->get('search');
 
        //si la request n est pas vide
-
         if (!empty($search) ) {
 
             // j'appelle ma requête personalisée de repository et je reutilise ma metode de pagination pour n afficher que 8 article par page

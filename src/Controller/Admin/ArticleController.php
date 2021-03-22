@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Admin\Article;
 use App\Form\Admin\ArticleType;
 use App\Repository\Admin\ArticleRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,10 +19,17 @@ class ArticleController extends AbstractController
     /**
      * @Route("/", name="admin_article_index", methods={"GET"})
      */
-    public function index(ArticleRepository $articleRepository): Response
+    public function index(ArticleRepository $articleRepository,
+                          PaginatorInterface $paginator,
+                          Request $request): Response
     {
+        $articles= $paginator->paginate(
+            $articleRepository->findAll(),
+            $request->query->getInt('page',1),8
+        );
+
         return $this->render('admin/article/index.html.twig', [
-            'articles' => $articleRepository->findAll(),
+            'articles' => $articles
         ]);
     }
 
@@ -38,8 +46,9 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
-
+            $this->addFlash("success","l article a bien ete enregister");
             return $this->redirectToRoute('admin_article_index');
+
         }
 
         return $this->render('admin/article/new.html.twig', [

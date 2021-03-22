@@ -43,10 +43,7 @@ class Article
      */
     private $image;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $publicationAt;
+
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="articles")
@@ -119,17 +116,7 @@ class Article
         return $this;
     }
 
-    public function getPublicationAt(): ?DateTimeInterface
-    {
-        return $this->publicationAt;
-    }
 
-    public function setPublicationAt(DateTimeInterface $publicationAt): self
-    {
-        $this->publicationAt = $publicationAt;
-
-        return $this;
-    }
 
     public function getCategory(): ?Category
     {

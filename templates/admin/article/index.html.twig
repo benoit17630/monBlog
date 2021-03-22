@@ -3,31 +3,31 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1>Article index</h1>
-
+    <h1 class="text-center">Article index</h1>
+    <a href="{{ path('admin_article_new') }}" class="btn btn-primary">Create new</a>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
+
                 <th>Name</th>
                 <th>Content</th>
                 <th>IsPublished</th>
                 <th>CreatedAt</th>
                 <th>Image</th>
-                <th>PublicationAt</th>
+
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for article in articles %}
             <tr>
-                <td>{{ article.id }}</td>
+
                 <td>{{ article.name }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.isPublished ? 'Yes' : 'No' }}</td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ article.image }}</td>
-                <td>{{ article.publicationAt ? article.publicationAt|date('Y-m-d H:i:s') : '' }}</td>
+
                 <td>
                     <a href="{{ path('admin_article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
@@ -41,5 +41,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_article_new') }}">Create new</a>
+
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(articles) }}
+    </div>
 {% endblock %}

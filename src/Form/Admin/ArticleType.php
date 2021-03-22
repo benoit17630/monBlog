@@ -3,7 +3,11 @@
 namespace App\Form\Admin;
 
 use App\Entity\Admin\Article;
+use App\Entity\Admin\Category;
+
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,10 +19,17 @@ class ArticleType extends AbstractType
             ->add('name')
             ->add('content')
             ->add('isPublished')
-            ->add('createdAt')
+            ->add('createdAt',DateType::class,[
+                'widget'=>'single_text',
+                'label'=> "Date de creation"]
+            )
             ->add('image')
-            ->add('publicationAt')
-            ->add('category')
+
+            ->add('category', EntityType::class,[
+                "class"=> Category::class,
+                "multiple"=>false,
+                "choice_label"=>"name"
+            ])
         ;
     }
 

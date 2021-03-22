@@ -54,10 +54,11 @@ class ArticleRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('a')
             // je selecttionne le titre de mes articles , s est sur les titres que je fait les recheches
             ->andWhere('a.name like :search')
+            ->orWhere('a.content like :search' )
             // je selectionne que les articles qui sont isPublished a true donc que sont qui sont publier
             ->andWhere('a.isPublished =true')
             // la key s est une securiter pour verifier qu il n y a pas de requete sql ou de balise php
-                //'%' . $search . '%' pour que la recherche marche sur le like
+            //'%' . $search . '%' pour que la recherche marche sur le like
             ->setParameter('search','%'. $search.'%')
             ->getQuery()
             ->getResult()
