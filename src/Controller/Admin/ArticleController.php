@@ -57,15 +57,7 @@ class ArticleController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="admin_article_show", methods={"GET"})
-     */
-    public function show(Article $article): Response
-    {
-        return $this->render('admin/article/show.html.twig', [
-            'article' => $article,
-        ]);
-    }
+
 
     /**
      * @Route("/{id}/edit", name="admin_article_edit", methods={"GET","POST"})
@@ -77,7 +69,7 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $this->addFlash("sucess","votre article a bien ete modifier");
             return $this->redirectToRoute('admin_article_index');
         }
 

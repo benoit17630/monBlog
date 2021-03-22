@@ -3,17 +3,17 @@
 {% block title %}Article index{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Article index</h1>
-    <a href="{{ path('admin_article_new') }}" class="btn btn-primary">Create new</a>
+    <h1 class="text-center">Liste des articles</h1>
+    <a href="{{ path('admin_article_new') }}" class="btn btn-primary">Ajouter un article</a>
     <table class="table">
         <thead>
             <tr>
 
-                <th>Name</th>
-                <th>Content</th>
-                <th>IsPublished</th>
-                <th>CreatedAt</th>
-                <th>Image</th>
+                <th>Nom</th>
+
+                <th>Publier ?</th>
+
+
 
                 <th>actions</th>
             </tr>
@@ -23,14 +23,13 @@
             <tr>
 
                 <td>{{ article.name }}</td>
-                <td>{{ article.content }}</td>
-                <td>{{ article.isPublished ? 'Yes' : 'No' }}</td>
-                <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ article.image }}</td>
+
+                <td>{{ article.isPublished ? 'Oui' : 'Non' }}</td>
+
 
                 <td>
-                    <a href="{{ path('admin_article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-info">Modifier</a>
+                    {{ include('admin/article/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}

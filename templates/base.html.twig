@@ -51,12 +51,19 @@
     </nav>
 </header>
 <main class="container">
+    {% for label, messages in app.flashes %}
+       {% for message in messages %}
+            <div class="alert alert-{{ label }} mt-5">
+                {{ message }}
+            </div>
+       {% endfor %}
+    {% endfor %}
     {% block body %}{% endblock %}
 </main>
 <footer>
 
 </footer>
 {% block script %}{% endblock %}
-<script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>
