@@ -4,8 +4,6 @@
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/search.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/search.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,7 @@
       <workItem from="1616256587082" duration="9000" />
       <workItem from="1616257831773" duration="52000" />
       <workItem from="1616258164776" duration="601000" />
-      <workItem from="1616400790670" duration="2786000" />
+      <workItem from="1616400790670" duration="7507000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -198,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616169595778</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ra jout d une verification dans le fichier search.html.twig">
+      <created>1616403876960</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616403876960</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +213,8 @@
     <MESSAGE value="pour que david regarde" />
     <MESSAGE value="function de recherche" />
     <MESSAGE value="function de recherche avec commentaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="function de recherche avec commentaire" />
+    <MESSAGE value="ra jout d une verification dans le fichier search.html.twig" />
+    <option name="LAST_COMMIT_MESSAGE" value="ra jout d une verification dans le fichier search.html.twig" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

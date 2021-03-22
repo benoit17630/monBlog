@@ -37,8 +37,10 @@ class ArticleController extends AbstractController
 
         if (!empty($search) ) {
 
-            // j'appelle ma requête personalisée de repository
-            $articles = $repository->searchByTitle($search);
+            // j'appelle ma requête personalisée de repository et je reutilise ma metode de pagination pour n afficher que 8 article par page
+            $articles =$paginator->paginate(
+                $repository->searchByTitle($search),
+                $request->query->getInt('page',1),8);
 
             return $this->render("article/search.html.twig", [
 
