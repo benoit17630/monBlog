@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Admin/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Admin/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/Admin/ArticleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/admin/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/article/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/article/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +172,7 @@
       <workItem from="1616256587082" duration="9000" />
       <workItem from="1616257831773" duration="52000" />
       <workItem from="1616258164776" duration="601000" />
-      <workItem from="1616400790670" duration="11122000" />
+      <workItem from="1616400790670" duration="11471000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -219,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616410898519</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="voir datafixture articlefixiture">
+      <created>1616418391039</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616418391039</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +228,8 @@
     <MESSAGE value="function de recherche avec commentaire" />
     <MESSAGE value="ra jout d une verification dans le fichier search.html.twig" />
     <MESSAGE value="ajout de la pagination a la recherche" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de la pagination a la recherche" />
+    <MESSAGE value="voir datafixture articlefixiture" />
+    <option name="LAST_COMMIT_MESSAGE" value="voir datafixture articlefixiture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
