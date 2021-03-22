@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/show.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210322125739.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +175,7 @@
       <workItem from="1616256587082" duration="9000" />
       <workItem from="1616257831773" duration="52000" />
       <workItem from="1616258164776" duration="601000" />
-      <workItem from="1616400790670" duration="11471000" />
+      <workItem from="1616400790670" duration="12681000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -216,7 +219,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616418391039</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="voir datafixture articlefixiture">
+      <created>1616418415221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616418415221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="voir datafixture articlefixiture">
+      <created>1616418617408</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616418617408</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
