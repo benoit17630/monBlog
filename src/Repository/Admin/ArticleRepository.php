@@ -48,7 +48,7 @@ class ArticleRepository extends ServiceEntityRepository
             ;
     }
 // je cree une requete pour ma recherche dans les articles publier
-    public function searchByTitle($search)
+    public function searchByTitle(string $search)
     {
 
         return $this->createQueryBuilder('a')

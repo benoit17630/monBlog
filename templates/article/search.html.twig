@@ -6,6 +6,9 @@
     <h1 class="text-center mt-4 pt-4"> Article de la recherche</h1>
 
     <div class="row">
+        {% if articles is empty %}
+            <h3 class="mt-4 text-center text-danger"> desoler il n y a pas d article corespondant a votre recherche</h3>
+        {% endif %}
         {% for article  in articles %}
 
             <div class="col-sm-6">

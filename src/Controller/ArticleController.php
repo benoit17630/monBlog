@@ -35,7 +35,7 @@ class ArticleController extends AbstractController
 
        //si la request n est pas vide
 
-        if (!empty($search)) {
+        if (!empty($search) ) {
 
             // j'appelle ma requête personalisée de repository
             $articles = $repository->searchByTitle($search);
