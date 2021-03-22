@@ -40,7 +40,7 @@ class ArticleFixtures extends Fixture
                         ->setContent($faker->text("255"))
                         ->setCreatedAt($faker->datetime("now",'utc'))
                         ->setIsPublished($faker->boolean)
-                        ->setPublicationAt($faker->datetime("now","utc"))
+
                         ->setImage($faker->imageUrl($width = 640, $height = 480))
                         ->setCategory($category)
 
