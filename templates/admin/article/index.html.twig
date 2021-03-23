@@ -5,6 +5,14 @@
 {% block body %}
     <h1 class="text-center">Liste des articles</h1>
     <a href="{{ path('admin_article_new') }}" class="btn btn-primary">Ajouter un article</a>
+    <nav>
+        {% for category in articleCategory %}
+
+                <a href="{{ path('admin_article_category', {'id': category.id}) }}" class="btn btn-dark mt-3">{{ category.name }}</a>
+
+
+        {% endfor %}
+    </nav>
     <table class="table table-striped  table-bordered border-dark mt-4 table-responsive">
         <thead>
         <tr>
@@ -21,7 +29,7 @@
             <tr >
 
                 <td>{{ article.name }}</td>
-                <td class="d-none d-lg-flex">{{ article.category.name }}</td>
+                <td class="d-none d-lg-flex">{{ article.name }}</td>
                 <td>{{ article.isPublished ? 'Oui' : 'Non' }}</td>
                 <td class="d-none d-lg-flex">{{ article.createdAt|date("d/m/Y") }}</td>
                 <td>

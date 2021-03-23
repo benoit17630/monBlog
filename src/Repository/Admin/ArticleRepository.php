@@ -35,6 +35,8 @@ class ArticleRepository extends ServiceEntityRepository
             ;
     }
 
+
+
     //je fait une requete pour afficher que les article publier et fix ma requete au 2 dernieres
     public function findAllPublishedLastTwo()
     {

@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Admin\Article;
 use App\Form\Admin\ArticleType;
 use App\Repository\Admin\ArticleRepository;
+use App\Repository\Admin\CategoryRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,8 +22,10 @@ class ArticleController extends AbstractController
      */
     public function index(ArticleRepository $articleRepository,
                           PaginatorInterface $paginator,
-                          Request $request): Response
+                          Request $request,
+                          CategoryRepository $categoryRepository): Response
     {
+        $articleCategories =$categoryRepository->findAll();
         $articles= $paginator->paginate(
 
             $articleRepository->findAll(),
@@ -32,7 +35,8 @@ class ArticleController extends AbstractController
 
 
         return $this->render('admin/article/index.html.twig', [
-            'articles' => $articles
+            'articles' => $articles,
+            'articleCategory'=>$articleCategories
         ]);
     }
 
@@ -95,5 +99,28 @@ class ArticleController extends AbstractController
         }
 
         return $this->redirectToRoute('admin_article_index');
+    }
+
+    /**
+     * @Route("/{id}", name="admin_article_category")
+     */
+    public function articleCategory($id,
+                                    ArticleRepository $repository,
+                                    PaginatorInterface $paginator,
+                                    Request $request,
+                                    CategoryRepository $categoryRepository)
+
+    {
+        $articleCategories =$categoryRepository->findAll();
+
+        $articles= $paginator->paginate(
+            $articles = $repository->findby(["category"=>$id]),
+            $request->query->getInt('page',1),8
+        );
+
+        return $this->render('admin/article/index.html.twig', [
+            'articles' => $articles,
+            'articleCategory'=>$articleCategories
+        ]);
     }
 }
