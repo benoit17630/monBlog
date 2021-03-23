@@ -49,7 +49,7 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
-            $this->addFlash("success","l article a bien ete enregister");
+            $this->addFlash("success","l article avec le titre ".$article->getName() ." a bien ete enregister");
             return $this->redirectToRoute('admin_article_index');
 
         }
@@ -72,7 +72,7 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash("sucess","votre article a bien ete modifier");
+            $this->addFlash("success","l article avec le titre " . $article->getName() ." a bien ete modifier");
             return $this->redirectToRoute('admin_article_index');
         }
 
@@ -91,7 +91,7 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
-            $this->addFlash("warning", "l article a bien ete suprimer ");
+            $this->addFlash("warning", "l article avec le titre " . $article->getName() . " a bien ete supprimer ");
         }
 
         return $this->redirectToRoute('admin_article_index');
