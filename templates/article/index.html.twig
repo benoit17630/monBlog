@@ -29,8 +29,12 @@
         </div>
         {# display navigation #}
         <div class="navigation">
-            {% do articles.setPageRange(3) %}
-            {{ knp_pagination_render(articles) }}
+
+            {{ knp_pagination_render(articles, null, {}, {
+                'align': 'left',
+                'size': 'small',
+                'rounded': true,
+            }) }}
         </div>
 
 {% endblock %}
