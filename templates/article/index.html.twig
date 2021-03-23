@@ -29,6 +29,7 @@
         </div>
         {# display navigation #}
         <div class="navigation">
+            {% do articles.setPageRange(3) %}
             {{ knp_pagination_render(articles) }}
         </div>
 

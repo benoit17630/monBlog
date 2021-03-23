@@ -24,9 +24,12 @@ class ArticleController extends AbstractController
                           Request $request): Response
     {
         $articles= $paginator->paginate(
+
             $articleRepository->findAll(),
             $request->query->getInt('page',1),8
+
         );
+
 
         return $this->render('admin/article/index.html.twig', [
             'articles' => $articles
@@ -88,6 +91,7 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();
+            $this->addFlash("warning", "l article a bien ete suprimer ");
         }
 
         return $this->redirectToRoute('admin_article_index');
