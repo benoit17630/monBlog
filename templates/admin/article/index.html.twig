@@ -10,6 +10,7 @@
         <tr>
 
             <th scope="col">Nom</th>
+            <th class="d-none d-lg-flex">categorie</th>
             <th scope="col">Publier ?</th>
             <th class="d-none d-lg-flex">Date</th>
             <th scope="col">actions</th>
@@ -20,6 +21,7 @@
             <tr >
 
                 <td>{{ article.name }}</td>
+                <td class="d-none d-lg-flex">{{ article.category.name }}</td>
                 <td>{{ article.isPublished ? 'Oui' : 'Non' }}</td>
                 <td class="d-none d-lg-flex">{{ article.createdAt|date("d/m/Y") }}</td>
                 <td>
