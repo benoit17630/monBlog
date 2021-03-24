@@ -45,10 +45,23 @@ class ArticleController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        // Je créé une nouvelle instance de l'entité Article
+        // pour créer un nouveau enregistrement en bdd
         $article = new Article();
+
+        // je veux afficher un formulaire pour créer des articles
+        // donc je viens récupérer le gabarit de formulaire ArticleType créé en ligne de commandes
+        // en utilisant la méthode createForm de l'AbstractController (et je lui passe en parametre
+        // le gabarit de formulaire à créer)
         $form = $this->createForm(ArticleType::class, $article);
+
+        // Je viens lier le formulaire créé
+        // à la requête POST
+        // de cette manière, je pourrai utiliser la variable $form
+        // pour vérifier si les données POST ont été envoyées ou pas
         $form->handleRequest($request);
 
+        // si le formulaire a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
@@ -58,6 +71,8 @@ class ArticleController extends AbstractController
 
         }
 
+        // je récupère (et compile) le fichier twig et je lui envoie le formulaire, transformé
+        // en vue (donc exploitable par twig)
         return $this->render('admin/article/new.html.twig', [
             'article' => $article,
             'form' => $form->createView(),

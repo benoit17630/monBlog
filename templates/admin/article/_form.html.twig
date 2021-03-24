@@ -1,4 +1,9 @@
 <div class="row">
+    {#
+    j utilise la fonction de twig FORM pour afficher mon formulaire
+    et le nom de ma variable(form) en parametre
+
+    #}
     {{ form_start(form) }}
     {{ form_widget(form) }}
     <button class="btn btn-primary mt-3">{{ button_label|default('Enregistrer') }}</button>
