@@ -10,10 +10,12 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class ArticleType extends AbstractType
 {
@@ -28,13 +30,16 @@ class ArticleType extends AbstractType
             ->add('name',TextType::class,
                 [
                     'label'=>"nom",
+                    "attr"=>[
+                        "class"=>'test'
+                    ]
 
 
                 ])
             //je cree le choix des category dans mon formulaire grace a EntityType::class
             ->add('category', EntityType::class,
                 [
-                    //je dite dans quelle entity le choix est
+                    //je dit dans quelle entity le choix est
                     "class"=> Category::class,
                     "multiple"=>false,
                     // je choisi la collone qui va etre afficher
@@ -49,7 +54,8 @@ class ArticleType extends AbstractType
                 ])
             ->add('isPublished', CheckboxType::class,
                 [
-                    "label"=>"publier ?"
+                    "label"=>"publier ?",
+                    "required"=>false
                 ])
             ->add('createdAt',DateType::class,
                 [
@@ -57,7 +63,23 @@ class ArticleType extends AbstractType
                     'label'=> "Date de creation"
                 ])
 
-            ->add('image')
+            //pour la propriete image je dit que s est un FileType et que mapped a false sinon
+            // j ai une erreur pour l update d un article
+            ->add('image', FileType::class,[
+                "mapped"=> false, //
+                "required"=>false, // pour pas a avoir a remetre l image a chaque fois
+                "constraints"=>[
+                    new File([
+                        'maxSize'=>"1024k",
+                        "mimeTypes"=>[
+                            "image/jpg",
+                            "image/jpeg",
+                            "image/gif",
+                            "image/png"
+                        ]
+                    ])
+                ]
+            ])
 
 
         ;

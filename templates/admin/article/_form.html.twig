@@ -5,6 +5,25 @@
 
     #}
     {{ form_start(form) }}
+    <div class="row">
+        <div class="col-6">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+        </div>
+        <div class="col-6">
+            {{ form_label(form.category) }}
+            {{ form_widget(form.category) }}
+        </div>
+        <div class="col-6">
+            {{ form_label(form.createdAt) }}
+            {{ form_widget(form.createdAt) }}
+        </div>
+        <div class="col-6">
+            {{ form_label(form.image) }}
+            {{ form_widget(form.image) }}
+        </div>
+    </div>
+
     {{ form_widget(form) }}
     <button class="btn btn-primary mt-3">{{ button_label|default('Enregistrer') }}</button>
     {{ form_end(form) }}

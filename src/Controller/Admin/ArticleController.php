@@ -12,6 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/admin/article")
@@ -44,7 +45,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/new", name="admin_article_new", methods={"GET","POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
     {
         // Je créé une nouvelle instance de l'entité Article
         // pour créer un nouveau enregistrement en bdd
@@ -65,6 +66,32 @@ class ArticleController extends AbstractController
         // si le formulaire a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $imageFile = $form->get('image')->getData();
+
+            if ($imageFile){
+
+                $originalFilename = pathinfo($imageFile->getClientOriginalName(),PATHINFO_FILENAME);
+
+                $safeFilename= $slugger->slug($originalFilename);
+
+                $newFilename = $safeFilename.'_'.uniqid().'.'.$imageFile->guessextension();
+
+
+                $imageFile->move(
+
+                    $this->getParameter('images_directory'),
+
+                    $newFilename
+
+                );
+
+
+
+                $article->setImage($newFilename);
+
+            }
+
+
             $article = $form->getData();
           //  $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
@@ -83,17 +110,27 @@ class ArticleController extends AbstractController
     }
 
 
-
     /**
      * @Route("/{id}/edit", name="admin_article_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param Article $article
+     * @return Response
      */
-    public function edit(Request $request, Article $article): Response
+    public function edit(Request $request,
+                         Article $article,
+                         EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+
+
+            $article = $form->getData();
+
+            // et j'enregistre l'article en bdd
+            $entityManager->persist($article);
+            $entityManager->flush();
             $this->addFlash("success","l article avec le titre " . $article->getName() ." a bien ete modifier");
             return $this->redirectToRoute('admin_article_index');
         }
