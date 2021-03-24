@@ -33,7 +33,8 @@ class ArticleType extends AbstractType
                 ])
             //je cree le choix des category dans mon formulaire grace a EntityType::class
             ->add('category', EntityType::class,
-                [ //je dite dans quelle entity le choix est
+                [
+                    //je dite dans quelle entity le choix est
                     "class"=> Category::class,
                     "multiple"=>false,
                     // je choisi la collone qui va etre afficher
@@ -53,8 +54,9 @@ class ArticleType extends AbstractType
             ->add('createdAt',DateType::class,
                 [
                     'widget'=>'single_text',
-                    'label'=> "Date de creation"]
-            )
+                    'label'=> "Date de creation"
+                ])
+
             ->add('image')
 
 

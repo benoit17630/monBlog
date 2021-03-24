@@ -6,6 +6,7 @@ use App\Entity\Admin\Article;
 use App\Form\Admin\ArticleType;
 use App\Repository\Admin\ArticleRepository;
 use App\Repository\Admin\CategoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -43,7 +44,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/new", name="admin_article_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         // Je créé une nouvelle instance de l'entité Article
         // pour créer un nouveau enregistrement en bdd
@@ -63,7 +64,9 @@ class ArticleController extends AbstractController
 
         // si le formulaire a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
+
+            $article = $form->getData();
+          //  $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
             $this->addFlash("success","l article avec le titre ".$article->getName() ." a bien ete enregister");
