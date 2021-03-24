@@ -8,7 +8,7 @@
     <nav>
         {% for category in articleCategory %}
 
-                <a href="{{ path('admin_article_category', {'name': category.name}) }}" class="btn btn-dark mt-3">{{ category.name }}</a>
+            <a href="{{ path('admin_article_category', {'name': category.name}) }}" class="btn btn-dark mt-3">{{ category.name }}</a>
 
 
         {% endfor %}
@@ -18,24 +18,26 @@
         <tr>
 
             <th scope="col">Nom</th>
-            <th class="d-none d-lg-flex">categorie</th>
+
             <th scope="col">Publier ?</th>
             <th class="d-none d-lg-flex">Date</th>
             <th scope="col">actions</th>
         </tr>
         </thead>
         <tbody>
-        {% for article in articles %}
+        {% for category in categories %}
+            {% for article in category.articles %}
+
             <tr >
 
                 <td>{{ article.name }}</td>
-                <td class="d-none d-lg-flex">{{ article.category.name }}</td>
+
                 <td>{{ article.isPublished ? 'Oui' : 'Non' }}</td>
                 <td class="d-none d-lg-flex">{{ article.createdAt|date("d/m/Y") }}</td>
                 <td>
 
-                         <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-info  ">Modifier</a>
-                         {{ include('admin/article/_delete_form.html.twig') }}
+                    <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-info  ">Modifier</a>
+                    {{ include('admin/article/_delete_form.html.twig') }}
 
                 </td>
             </tr>
@@ -44,6 +46,7 @@
                 <td colspan="8">no records found</td>
             </tr>
         {% endfor %}
+        {% endfor %}
         </tbody>
     </table>
 
@@ -51,10 +54,12 @@
     {# display navigation #}
     <div class="navigation">
 
-        {{ knp_pagination_render(articles, null, {}, {
+        {{ knp_pagination_render(categories, null, {}, {
             'align': 'left',
             'size': 'small',
             'rounded': true,
         }) }}
     </div>
 {% endblock %}
+
+

@@ -102,10 +102,9 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="admin_article_category")
+     * @Route("/{name}", name="admin_article_category")
      */
-    public function articleCategory($id,
-                                    ArticleRepository $repository,
+    public function articleCategory($name,
                                     PaginatorInterface $paginator,
                                     Request $request,
                                     CategoryRepository $categoryRepository)
@@ -113,13 +112,13 @@ class ArticleController extends AbstractController
     {
         $articleCategories =$categoryRepository->findAll();
 
-        $articles= $paginator->paginate(
-            $articles = $repository->findby(["category"=>$id]),
-            $request->query->getInt('page',1),8
+        $categories= $paginator->paginate(
+            $categoryRepository->findBy(["name"=>$name]),
+            $request->query->getInt('page',1),4
         );
 
-        return $this->render('admin/article/index.html.twig', [
-            'articles' => $articles,
+        return $this->render('admin/article/categorie.html.twig', [
+            'categories' => $categories,
             'articleCategory'=>$articleCategories
         ]);
     }
