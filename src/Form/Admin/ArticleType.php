@@ -31,9 +31,7 @@ class ArticleType extends AbstractType
             ->add('name',TextType::class,
                 [
                     'label'=>"nom",
-                    "attr"=>[
-                        "class"=>'test'
-                    ]
+
                 ]
             )
 
