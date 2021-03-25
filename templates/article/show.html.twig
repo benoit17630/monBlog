@@ -12,7 +12,7 @@
 
 
                                 <p class="card-text col-6">{{ article.content }}</p>
-                                <div class="col-6"> <img src="{{ article.image }}" alt="{{ article.name }}" class="img-fluid"></div>
+                                <div class="col-6"> <img src="{{ asset('uploads/articles/'~ article.image) }}" alt="{{ article.name }}" class="img-fluid"></div>
 
 
 

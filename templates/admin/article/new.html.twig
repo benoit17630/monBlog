@@ -3,9 +3,9 @@
 {% block title %}New Article{% endblock %}
 
 {% block body %}
-    <h1>Create new Article</h1>
+    <h1 class="text-center mb-5">Ajout d un article</h1>
 
     {{ include('admin/article/_form.html.twig') }}
 
-    <a href="{{ path('admin_article_index') }}">back to list</a>
+    <a href="{{ path('admin_article_index') }}" class="btn btn-outline-dark mt-3">retour a la liste des articles</a>
 {% endblock %}

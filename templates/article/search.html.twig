@@ -18,7 +18,7 @@
                         <h5 class="card-title col-12 text-center" style=" color:{{ article.category.color.color }}  ">{{ article.name }}</h5>
 
                         <p class="card-text col-6">{{ article.content }}</p>
-                        <div class="col-6"> <img src="{{ article.image }}" alt="{{ article.name }}" class="img-fluid"></div>
+                        <div class="col-6"> <img src="{{ asset('uploads/articles/'~ article.image) }}" alt="{{ article.name }}" class="img-fluid"></div>
                         <a  href="{{ path('article_show', {id :article.id}) }}" class="btn btn-primary mt-5">voir</a>
 
 
