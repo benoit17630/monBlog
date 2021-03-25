@@ -77,8 +77,10 @@ class ArticleType extends AbstractType
                             "image/gif",
                             "image/png"
                         ]
-                    ])
-                ]
+                    ]),
+
+                ],
+
             ])
 
 

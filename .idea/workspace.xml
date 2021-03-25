@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/essaye_605c437367574.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +177,7 @@
       <workItem from="1616256587082" duration="9000" />
       <workItem from="1616257831773" duration="52000" />
       <workItem from="1616258164776" duration="601000" />
-      <workItem from="1616400790670" duration="65406000" />
+      <workItem from="1616400790670" duration="70679000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -313,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616601451256</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="ajout filetype et commentaire">
+      <created>1616660003195</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1616660003195</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -380,7 +386,8 @@
     <MESSAGE value="ajout du nom de la category et des bouton pour filtrer par category" />
     <MESSAGE value="ajout de commentaire au formulaire" />
     <MESSAGE value="ajout filetype" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout filetype" />
+    <MESSAGE value="ajout filetype et commentaire" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout filetype et commentaire" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
