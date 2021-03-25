@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/camelballs_605b5b9926ac5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/articles/essaye_605c437367574.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/_form.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/article/edit.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +178,7 @@
       <workItem from="1616256587082" duration="9000" />
       <workItem from="1616257831773" duration="52000" />
       <workItem from="1616258164776" duration="601000" />
-      <workItem from="1616400790670" duration="63814000" />
+      <workItem from="1616400790670" duration="65406000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -309,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616591927969</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="ajout filetype">
+      <created>1616601451256</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1616601451256</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +379,8 @@
     <MESSAGE value="ajout du nom de la category" />
     <MESSAGE value="ajout du nom de la category et des bouton pour filtrer par category" />
     <MESSAGE value="ajout de commentaire au formulaire" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de commentaire au formulaire" />
+    <MESSAGE value="ajout filetype" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout filetype" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

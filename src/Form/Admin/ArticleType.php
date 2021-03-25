@@ -68,7 +68,7 @@ class ArticleType extends AbstractType
             ->add('image', FileType::class,[
                 "mapped"=> false, //
                 "required"=>false, // pour pas a avoir a remetre l image a chaque fois
-                "constraints"=>[
+                "constraints"=>[//je definie les contrainte sur le type de fichier a recuperer
                     new File([
                         'maxSize'=>"1024k",
                         "mimeTypes"=>[
