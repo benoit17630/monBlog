@@ -21,6 +21,7 @@
             <th class="d-none d-lg-flex">categorie</th>
             <th scope="col">Publier ?</th>
             <th class="d-none d-lg-flex">Date</th>
+            <th>Image</th>
             <th scope="col">actions</th>
         </tr>
         </thead>
@@ -32,6 +33,7 @@
                 <td class="d-none d-lg-flex">{{ article.category.name }}</td>
                 <td>{{ article.isPublished ? 'Oui' : 'Non' }}</td>
                 <td class="d-none d-lg-flex">{{ article.createdAt|date("d/m/Y") }}</td>
+                <td class="w-25"><img src="{{ asset('uploads/articles/'~ article.image) }}" alt="{{ article.name }}" class="img-fluid"></td>
                 <td>
 
                          <a href="{{ path('admin_article_edit', {'id': article.id}) }}" class="btn btn-info  ">Modifier</a>

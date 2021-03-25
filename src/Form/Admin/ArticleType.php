@@ -26,6 +26,7 @@ class ArticleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+
             //je dit que s est un TextType ensuite je change le label
             ->add('name',TextType::class,
                 [
@@ -33,9 +34,9 @@ class ArticleType extends AbstractType
                     "attr"=>[
                         "class"=>'test'
                     ]
+                ]
+            )
 
-
-                ])
             //je cree le choix des category dans mon formulaire grace a EntityType::class
             ->add('category', EntityType::class,
                 [
@@ -47,44 +48,47 @@ class ArticleType extends AbstractType
                     //je renome en fr car mes utilisateur seront francais
                     "label"=> "categories"
 
-                ])
+                ]
+            )
             ->add('content' , TextareaType::class,
                 [
                     "label"=> "Contenu"
-                ])
+                ]
+            )
             ->add('isPublished', CheckboxType::class,
                 [
                     "label"=>"publier ?",
                     "required"=>false
-                ])
+                ]
+            )
             ->add('createdAt',DateType::class,
                 [
                     'widget'=>'single_text',
                     'label'=> "Date de creation"
-                ])
+                ]
+            )
 
             //pour la propriete image je dit que s est un FileType et que mapped a false sinon
             // j ai une erreur pour l update d un article
-            ->add('image', FileType::class,[
-                "mapped"=> false, //
-                "required"=>false, // pour pas a avoir a remetre l image a chaque fois
-                "constraints"=>[//je definie les contrainte sur le type de fichier a recuperer
-                    new File([
-                        'maxSize'=>"1024k",
-                        "mimeTypes"=>[
-                            "image/jpg",
-                            "image/jpeg",
-                            "image/gif",
-                            "image/png"
-                        ]
-                    ]),
+            ->add('image', FileType::class,
+                [
+                    "mapped"=> false, //
+                    "required"=>false, // pour pas a avoir a remetre l image a chaque fois
+                    "constraints"=>[//je definie les contrainte sur le type de fichier a recuperer
+                        new File([
+                            'maxSize'=>"5024k",
+                            "mimeTypes"=>[
+                                "image/jpg",
+                                "image/jpeg",
+                                "image/gif",
+                                "image/png"
+                            ]
+                        ])
 
-                ],
+                    ]
 
-            ])
-
-
-        ;
+                ]
+            );
     }
 
     //cette metode relie le formulaire a l entity
