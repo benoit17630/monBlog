@@ -5,9 +5,12 @@ namespace App\Entity\Admin;
 use App\Repository\Admin\ArticleRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @UniqueEntity("name")
  */
 class Article
 {
@@ -20,11 +23,19 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="le titre ne doit pas etre vide")
+     * @Assert\Length( min="4", max="100",
+     *     minMessage="le tire doit avoir {{ limit }} caractere au minimun ",
+     *     maxMessage="le tire doit avoir {{ limit }} caractere au maximun")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="le titre ne doit pas etre vide")
+     * @Assert\Length( min="4", max="100000",
+     *     minMessage="le contenu doit avoir {{ limit }} caractere au minimun ",
+     *     maxMessage="le contenu de l article doit avoir {{ limit }} caractere au maximun")
      */
     private $content;
 
@@ -35,6 +46,7 @@ class Article
 
     /**
      * @ORM\Column(type="datetime")
+     *
      */
     private $createdAt;
 

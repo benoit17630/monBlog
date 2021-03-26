@@ -30,7 +30,8 @@ class ArticleType extends AbstractType
             //je dit que s est un TextType ensuite je change le label
             ->add('name',TextType::class,
                 [
-                    'label'=>"nom",
+                    'label'=>"Titre de l article",
+                    "required"=>false
 
                 ]
             )
@@ -44,7 +45,9 @@ class ArticleType extends AbstractType
                     // je choisi la collone qui va etre afficher
                     "choice_label"=>"name",
                     //je renome en fr car mes utilisateur seront francais
-                    "label"=> "categories"
+                    "label"=> "categories",
+                    "placeholder"=>"pas de category",
+                    "required"=>false
 
                 ]
             )

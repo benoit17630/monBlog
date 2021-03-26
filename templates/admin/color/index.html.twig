@@ -24,7 +24,7 @@
                     <td>
 
                         <a href="{{ path('admin_color_edit', {'id': color.id}) }}" class="btn btn-warning">Modifier</a>
-                        <a href="{{ path('admin_color_delete', {'id': color.id}) }}" class="btn btn-danger">Suprimmer</a>
+                        {{ include('admin/color/_delete_form.html.twig') }}
 
                     </td>
                 </tr>

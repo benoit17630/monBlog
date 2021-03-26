@@ -5,26 +5,45 @@
 
     #}
     {{ form_start(form) }}
+
     <div class="row">
+
         <div class="col-6 row">
-            <div class="col-2">{{ form_label(form.name) }}</div>
-          <div class="col-6">{{ form_widget(form.name) }}</div>
+            <div class="col-12 text-center">{{ form_label(form.name) }}</div>
+
+            <div class="col-12">{{ form_widget(form.name) }}</div>
+
+
         </div>
         <div class="col-6 row">
-            <div class="col-2">{{ form_label(form.category) }}</div>
-            <div class="col-6">{{ form_widget(form.category) }}</div>
+            <div class="col-12 text-center">{{ form_label(form.category) }} </div>
+            <div class="col-12">{{ form_widget(form.category) }}</div>
+
         </div>
         <div class="col-6 row mt-2">
-            <div class="col-4">{{ form_label(form.createdAt) }}</div>
-            <div class="col-6">{{ form_widget(form.createdAt) }}</div>
+            <div class="col-12">{{ form_label(form.createdAt) }}</div>
+            <div class="col-12">{{ form_widget(form.createdAt) }}</div>
+
         </div>
         <div class="col-6 row mt-2">
-            <div class="col-2">{{ form_label(form.image) }}</div>
-            <div class="col-6">{{ form_widget(form.image) }}</div>
+            <div class="col-12">{{ form_label(form.image) }}</div>
+            <div class="col-12">{{ form_widget(form.image) }}</div>
+
+        </div>
+        <div class="col-12 row mt-2">
+            <div class="col-12">{{ form_label(form.content) }}</div>
+            <div class="col-12">{{ form_widget(form.content) }}</div>
+
+        </div>
+        <div class="col-6 row mt-2">
+            <div class="col-2">{{ form_label(form.isPublished) }}</div>
+            <div class="col-6">{{ form_widget(form.isPublished) }}</div>
+
         </div>
     </div>
 
-    {{ form_widget(form) }}
+
     <button class="btn btn-primary mt-3">{{ button_label|default('Enregistrer') }}</button>
+    {{ form_rest(form)}}
     {{ form_end(form) }}
 </div>
