@@ -17,10 +17,14 @@
             <tr>
                 <th scope="row">{{ user.id }}</th>
                 <td>{{ user.email }}</td>
+                <td>
                 {% for role in user.roles %}
-                    <td>{{ role }}</td>
-                {% endfor %}
+                    {% if role != "ROLE_USER" %}
+                        {{ role }}
+                    {% endif %}
 
+                {% endfor %}
+                </td>
 
                 <td><a href="{{ path('admin_edit', {id : user.id}) }}" class="btn btn-secondary">Edit</a></td>
             </tr>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %} ! Mon Blog</title>
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     {% block stylesheets %}{% endblock %}
 
 
@@ -54,7 +54,7 @@
 <main class="container">
     {% for label, messages in app.flashes %}
        {% for message in messages %}
-            <div class="alert alert-{{ label }} mt-5">
+            <div id="flash" class="alert alert-{{ label }} mt-5">
                 {{ message }}
             </div>
        {% endfor %}
@@ -66,14 +66,7 @@
 </footer>
 
 <script type="text/javascript" src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-<script type="text/javascript">
-    function myFunction() {
-        document.getElementById("flash").style.display = "none";
-    }
-    $('select').select2();
-    {% block javascripts %}{% endblock %}
-</script>
+
 
 </body>
 </html>

@@ -25,6 +25,7 @@ class UserType extends AbstractType
                     "utilisateur"=>"ROLE_USER",
                     "administrateur"=>"ROLE_ADMIN"
                 ],
+                "multiple"=> false
 
             ])
             ->add("submit", SubmitType::class,[
