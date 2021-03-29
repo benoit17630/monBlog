@@ -20,25 +20,25 @@ class FileManager
     public function saveFile($article, $form)
     {
         //  je récupère recupere mon image
-        $imageFile = $form->get('image')->getData();
+        $file = $form->get('image')->getData();
 
         //si $imagefile
-        if ($imageFile){
+        if ($file){
 
             //j indique le path ou l image devra etre stocker pour cela je doit faire une modification dans config service.yaml
             // et metre dedans en fesant attention a l indentation
             //  parameters:
             //    images_directory: '%kernel.project_dir%/public/uploads/articles'
-            $originalFilename = pathinfo($imageFile->getClientOriginalName(),PATHINFO_FILENAME);
+            $originalFilename = pathinfo($file->getClientOriginalName(),PATHINFO_FILENAME);
 
             //je slugify le nom de l image
             $safeFilename= $this->slugger->slug($originalFilename);
 
             //je recupere le nom slugify puis lui donne un unigid pour etre sur que l image est un nom unique
-            $newFilename = $safeFilename.'_'.uniqid().'.'.$imageFile->guessextension();
+            $newFilename = $safeFilename.'_'.uniqid().'.'.$file->guessextension();
 
             //ici j enregistre l image dans le projet
-            $imageFile->move(
+            $file->move(
 
                 $this->parameterBag->get('images_directory'),
 

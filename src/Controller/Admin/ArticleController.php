@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\SluggerInterface;
+
 
 /**
  * @Route("/admin/article")
@@ -68,11 +68,11 @@ class ArticleController extends AbstractController
 
         // si le formulaire a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
-
-
-            $article= $fileManager->saveFile($article, $form);
-
             $article = $form->getData();
+
+
+
+             $fileManager->saveFile($article, $form);
 
           //  $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
@@ -106,10 +106,11 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-
-            $article= $fileManager->saveFile($article, $form);
-
             $article = $form->getData();
+            $fileManager->saveFile($article, $form);
+
+
+
             // et j'enregistre l'article en bdd
             $entityManager->persist($article);
             $entityManager->flush();
@@ -144,7 +145,7 @@ class ArticleController extends AbstractController
     public function articleCategory($name,
                                     PaginatorInterface $paginator,
                                     Request $request,
-                                    CategoryRepository $categoryRepository)
+                                    CategoryRepository $categoryRepository): Response
 
     {
         $articleCategories =$categoryRepository->findAll();

@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/bonnet2_6061a1489b8d0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/echarpe2_6061a1117dc67.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/echarpe2_6061a13880f52.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/first_6061a01d50b90.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/articles/manteau1_60619e8a67f57.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileManager/FileManager.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/articles/echarpe2_6061a5d8ae2e2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/articles/manteau1_6061a5f360397.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
     </list>
@@ -185,7 +181,7 @@
       <workItem from="1616258164776" duration="601000" />
       <workItem from="1616400790670" duration="78159000" />
       <workItem from="1616680348781" duration="30367000" />
-      <workItem from="1617001541010" duration="6363000" />
+      <workItem from="1617001541010" duration="7151000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -376,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616772901415</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="refractor">
+      <created>1617011673672</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1617011673672</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -449,7 +452,8 @@
     <MESSAGE value="ajout des contraintes" />
     <MESSAGE value="creation de l entity user &#10;creation de la page d inscription avec envoie d email de verification &#10;creation des pages login et logout &#10;creation du controller Admin\User pour la gestion des roles" />
     <MESSAGE value="petit modi sur la vue de tous les utilisateur" />
-    <option name="LAST_COMMIT_MESSAGE" value="petit modi sur la vue de tous les utilisateur" />
+    <MESSAGE value="refractor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refractor" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
