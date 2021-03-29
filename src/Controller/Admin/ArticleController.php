@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Admin\Article;
+use App\FileManager\FileManager;
 use App\Form\Admin\ArticleType;
 use App\Repository\Admin\ArticleRepository;
 use App\Repository\Admin\CategoryRepository;
@@ -47,7 +48,7 @@ class ArticleController extends AbstractController
      */
     public function new(Request $request,
                         EntityManagerInterface $entityManager,
-                        SluggerInterface $slugger): Response
+                        FileManager $fileManager): Response
     {
         // Je créé une nouvelle instance de l'entité Article
         // pour créer un nouveau enregistrement en bdd
@@ -67,41 +68,12 @@ class ArticleController extends AbstractController
 
         // si le formulaire a été envoyé et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
-            //  je récupère recupere mon image
-            $imageFile = $form->get('image')->getData();
 
-            //si $imagefile
-            if ($imageFile)
-            {
 
-                //j indique le path ou l image devra etre stocker pour cela je doit faire une modification dans config service.yaml
-                // et metre dedans en fesant attention a l indentation
-                //  parameters:
-                //    images_directory: '%kernel.project_dir%/public/uploads/articles'
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(),PATHINFO_FILENAME);
-
-                //je slugify le nom de l image
-                $safeFilename= $slugger->slug($originalFilename);
-
-                //je recupere le nom slugify puis lui donne un unigid pour etre sur que l image est un nom unique
-                $newFilename = $safeFilename.'_'.uniqid().'.'.$imageFile->guessextension();
-
-                //ici j enregistre l image dans le projet
-                $imageFile->move(
-
-                    $this->getParameter('images_directory'),
-
-                    $newFilename
-
-                );
-
-                //ici je set l image avec le nouveau nom pour la BDD
-                $article->setImage($newFilename);
-
-            }
-
+            $article= $fileManager->saveFile($article, $form);
 
             $article = $form->getData();
+
           //  $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
@@ -127,38 +99,17 @@ class ArticleController extends AbstractController
     public function edit(Request $request,
                          Article $article,
                          EntityManagerInterface $entityManager,
-                         SluggerInterface $slugger): Response
+                         FileManager $fileManager): Response
     {
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $imageFile = $form->get('image')->getData();
-
-            //si $imagefile
-            if ($imageFile){
 
 
-                $originalFilename = pathinfo($imageFile->getClientOriginalName(),PATHINFO_FILENAME);
-
-                $safeFilename= $slugger->slug($originalFilename);
-
-                $newFilename = $safeFilename.'_'.uniqid().'.'.$imageFile->guessextension();
-
-
-                $imageFile->move(
-
-                    $this->getParameter('images_directory'),
-
-                    $newFilename
-
-                );
-
-                $article->setImage($newFilename);
-            }
+            $article= $fileManager->saveFile($article, $form);
 
             $article = $form->getData();
-
             // et j'enregistre l'article en bdd
             $entityManager->persist($article);
             $entityManager->flush();
