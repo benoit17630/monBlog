@@ -18,15 +18,14 @@
                 <th scope="row">{{ user.id }}</th>
                 <td>{{ user.email }}</td>
                 <td>
-                {% for role in user.roles %}
-                    {% if role != "ROLE_USER" %}
-                        {{ role }}
+                    {% if 'ROLE_ADMIN' in user.roles %}
+                        Admin
+                    {% else %}
+                        Utilisateur
                     {% endif %}
-
-                {% endfor %}
                 </td>
 
-                <td><a href="{{ path('admin_edit', {id : user.id}) }}" class="btn btn-secondary">Edit</a></td>
+                <td><a href="{{ path('admin_user_edit', {id : user.id}) }}" class="btn btn-secondary">Edit</a></td>
             </tr>
         {% endfor %}
         </tbody>

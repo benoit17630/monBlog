@@ -32,7 +32,7 @@ class ArticleController extends AbstractController
         $articles= $paginator->paginate(
 
             $articleRepository->findAll(),
-            $request->query->getInt('page',1),8
+            $request->query->getInt('page',1),4
 
         );
 

@@ -21,12 +21,11 @@ class UserController extends AbstractController
         $users= $userRepository->findAll();
         return $this->render('admin/user/index.html.twig', [
             'users'=>$users
-
         ]);
     }
 
     /**
-     * @Route("/admin/user/edit/{id}", name="admin_edit" )
+     * @Route("/admin/user/edit/{id}", name="admin_user_edit" )
      */
     public function edit($id,
                          User $user,

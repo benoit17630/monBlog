@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="53dfbf1d-94a8-41c7-a08b-c46ede5ef377" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/ArticleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/Admin/ArticleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user/index.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +183,19 @@
       <workItem from="1616258164776" duration="601000" />
       <workItem from="1616400790670" duration="78159000" />
       <workItem from="1616680348781" duration="30367000" />
-      <workItem from="1617001541010" duration="7991000" />
+      <workItem from="1617001541010" duration="19523000" />
+      <workItem from="1617092036477" duration="2110000" />
+      <workItem from="1617098225073" duration="151000" />
+      <workItem from="1617183466154" duration="210000" />
+      <workItem from="1617271082261" duration="1217000" />
+      <workItem from="1617368913099" duration="651000" />
+      <workItem from="1617374249993" duration="2000" />
+      <workItem from="1617461874379" duration="949000" />
+      <workItem from="1617701265754" duration="145000" />
+      <workItem from="1617702371351" duration="1203000" />
+      <workItem from="1617717662481" duration="1851000" />
+      <workItem from="1617795097874" duration="56000" />
+      <workItem from="1617968095885" duration="1535000" />
     </task>
     <task id="LOCAL-00001" summary="pour que david regarde">
       <created>1616151318599</created>
@@ -384,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617012475770</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="make:user + gestion des role depuis admin/user">
+      <created>1617018151909</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1617018151909</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +481,8 @@
     <MESSAGE value="creation de l entity user &#10;creation de la page d inscription avec envoie d email de verification &#10;creation des pages login et logout &#10;creation du controller Admin\User pour la gestion des roles" />
     <MESSAGE value="petit modi sur la vue de tous les utilisateur" />
     <MESSAGE value="refractor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refractor" />
+    <MESSAGE value="make:user + gestion des role depuis admin/user" />
+    <option name="LAST_COMMIT_MESSAGE" value="make:user + gestion des role depuis admin/user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
